@@ -19,6 +19,12 @@ class _ListViewWidgetState extends State<ListViewWidget> {
     '365162226_636197125155833_2959209422245764664_n.jpg',
     '365189611_636199581822254_6471284189133837131_n.jpg',
   ];
+  int index = 0;
+  void setIndex(int index) {
+    setState(() {
+      this.index = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -99,6 +105,13 @@ class _ListViewWidgetState extends State<ListViewWidget> {
                 ),
               ),
             ),
+      bottomNavigationBar: BottomNavigationBar(
+          currentIndex: index,
+          onTap: setIndex,
+          items: const [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+          ]),
     );
   }
 }
