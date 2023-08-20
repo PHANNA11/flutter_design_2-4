@@ -40,7 +40,7 @@ class _TestpageState extends State<Testpage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
+      length: 3,
       child: Scaffold(
         appBar: AppBar(
           bottom: const TabBar(tabs: [
@@ -51,6 +51,10 @@ class _TestpageState extends State<Testpage> {
             Tab(
               text: 'Menu',
               icon: Icon(Icons.menu),
+            ),
+            Tab(
+              text: 'Map',
+              icon: Icon(Icons.map),
             ),
           ]),
         ),
@@ -78,6 +82,10 @@ class _TestpageState extends State<Testpage> {
                   child: fileImage == null
                       ? const SizedBox()
                       : Image(image: FileImage(File(fileImage!.path))),
+                ),
+                Container(
+                  width: double.infinity,
+                  color: Colors.yellow,
                 )
               ]),
             ),
@@ -121,3 +129,4 @@ class _TestpageState extends State<Testpage> {
     );
   }
 }
+// AIzaSyBgISYRsqWesHaL2qZYrVXTRvlD9IfeN5s
